@@ -1,0 +1,2 @@
+ALTER TABLE products
+    ADD COLUMN price_selector VARCHAR(500) NOT NULL DEFAULT '';
