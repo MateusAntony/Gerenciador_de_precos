@@ -37,4 +37,15 @@ public class ProductController {
     public ResponseEntity<ProductResponse> checkNow(@PathVariable Long id) {
         return ResponseEntity.ok(service.checkPriceNow(id));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ProductResponse> update(@PathVariable Long id, @RequestBody ProductRequest request) {
+        return ResponseEntity.ok(service.update(id, request));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
